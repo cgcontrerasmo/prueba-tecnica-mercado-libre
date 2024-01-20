@@ -1,0 +1,24 @@
+@import "styles/variables";
+
+.bread-crumbs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--internal {
+    padding: $littlePadding 0;
+    display: grid;
+    grid-column: 2 / span 10;
+  }
+  &--container-breads {
+    display: flex;
+    & > :last-child {
+      font-weight: bold;
+    }
+    & > :not(:last-child)::after {
+      content: " > ";
+    }
+    span {
+      font-size: 0.778rem;
+    }
+  }
+}
