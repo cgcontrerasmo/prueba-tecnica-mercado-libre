@@ -25,7 +25,7 @@ const SearchBar = () => {
         type="text"
       />
       <button aria-label="Buscar" type="submit">
-        <Icon name="search" />
+        <Icon name="Search" />
       </button>
     </form>
   );

@@ -1,7 +1,8 @@
 import Search from "assets/icons/ic_Search.png";
-
+import Shipping from "assets/icons/ic_shipping.png";
 export const IconComponents = {
-  search: Search,
+  Search,
+  Shipping,
 };
 
 type iconName = typeof IconComponents;

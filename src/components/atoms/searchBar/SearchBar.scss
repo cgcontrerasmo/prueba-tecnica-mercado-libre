@@ -1,7 +1,7 @@
 @import "styles/variables";
 .search-bar {
   width: 100%;
-  border: 1px solid gray;
+  border: 1px solid transparent;
   display: grid;
   grid-column: span 9;
   grid-template-columns: calc(100% - 40px) 40px;
@@ -9,7 +9,7 @@
   overflow: hidden;
   box-sizing: border-box;
   &:focus-within {
-    border: 1px solid red;
+    border: 1px solid $principalBlue;
   }
   input {
     height: 40px;
@@ -25,5 +25,11 @@
     height: 40px;
     border: none;
     cursor: pointer;
+    &:hover {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    &:active {
+      border: 1px solid black;
+    }
   }
 }

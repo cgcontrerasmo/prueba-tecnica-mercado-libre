@@ -11,8 +11,9 @@
     grid-template-columns: repeat(10, 1fr);
     background: #ffffff;
     border-radius: $borderRadius;
+    margin-bottom: 50px;
     & > :not(:last-child) {
-      border-bottom: 1px solid gray;
+      border-bottom: 2px solid $lighterGray;
     }
   }
 }
