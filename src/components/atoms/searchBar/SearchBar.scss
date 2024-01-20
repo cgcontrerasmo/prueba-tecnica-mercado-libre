@@ -1,0 +1,29 @@
+@import "styles/variables";
+.search-bar {
+  width: 100%;
+  border: 1px solid gray;
+  display: grid;
+  grid-column: span 9;
+  grid-template-columns: calc(100% - 40px) 40px;
+  border-radius: $borderRadius;
+  overflow: hidden;
+  box-sizing: border-box;
+  &:focus-within {
+    border: 1px solid red;
+  }
+  input {
+    height: 40px;
+    border: none;
+    padding: 0 10px;
+    &:focus-visible {
+      outline: none;
+    }
+    font-size: 1rem;
+  }
+  button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+  }
+}

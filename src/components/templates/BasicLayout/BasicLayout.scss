@@ -1,0 +1,9 @@
+@import "styles/variables";
+
+.basic-layout {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: $gapColumns--lg;
+  max-width: 1038px;
+  width: 100%;
+}

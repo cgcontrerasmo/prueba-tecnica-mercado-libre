@@ -1,0 +1,19 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffe600;
+  height: 60px;
+  &__image-search-bar {
+    display: grid;
+    grid-column: 2 / span 10;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 18px;
+    width: 100%;
+    img {
+      height: 40px;
+      width: 60px;
+      grid-column: span 1;
+    }
+  }
+}
