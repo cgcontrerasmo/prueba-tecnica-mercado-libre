@@ -1,0 +1,69 @@
+@import "styles/variables";
+
+.result-detail {
+  display: flex;
+  justify-content: center;
+  padding: $littlePadding;
+  &--internal {
+    display: grid;
+    grid-column: 2 / span 10;
+    grid-template-columns: repeat(10, 1fr);
+    padding: $largePadding;
+    border-radius: $borderRadius;
+    background: #ffffff;
+    & > div:first-child {
+      display: grid;
+      grid-column: span 10;
+      grid-template-columns: repeat(10, 1fr);
+      img {
+        width: 100%;
+        aspect-ratio: 1;
+        margin: -$largePadding 0px -$largePadding 0px;
+        border-radius: $borderRadius;
+        grid-column: span 7;
+      }
+      & > div:last-child {
+        grid-column: span 3;
+        span {
+          color: $darkerGray;
+          font-size: 0.778rem;
+        }
+        h1 {
+          font-size: 1.333rem;
+          margin: $littlePadding 0 $largePadding;
+        }
+        h2 {
+          font-size: 2.556rem;
+          margin: $largePadding 0;
+          font-weight: 600;
+        }
+        button {
+          background: $principalBlue;
+          width: 100%;
+          border: none;
+          color: #ffffff;
+          height: 40px;
+          border-radius: $borderRadius;
+          cursor: pointer;
+          &:hover {
+            background: red;
+          }
+        }
+      }
+    }
+    & > div:last-child {
+      display: grid;
+      grid-column: span 7;
+      h2 {
+        margin: $largePadding 0px;
+        font-size: 1.556rem;
+        font-weight: 600;
+      }
+      p {
+        margin: 0;
+        font-size: 0.889rem;
+        color: $lessLighterGray;
+      }
+    }
+  }
+}
