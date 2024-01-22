@@ -2,13 +2,13 @@ import ResultCard from "components/atoms/resultCard/ResultCard";
 import "./ListResultCard.scss";
 import BasicLayout from "components/templates/BasicLayout/BasicLayout";
 import { listResultCardProps } from "types/listResultCard";
-import Loading from "components/atoms/loading/Loading";
 
 const ListResultCard = ({ items }: listResultCardProps) => {
   console.log("items", items);
+
   return (
     <>
-      {items ? (
+      {items && (
         <div className="list-result-card">
           <BasicLayout>
             <div className="list-result-card--internal">
@@ -27,8 +27,6 @@ const ListResultCard = ({ items }: listResultCardProps) => {
             </div>
           </BasicLayout>
         </div>
-      ) : (
-        <Loading />
       )}
     </>
   );

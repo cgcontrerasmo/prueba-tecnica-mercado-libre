@@ -2,10 +2,12 @@ import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import "./SearchBar.scss";
 import Icon from "../icon/Icon";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useEventEmitter } from "hooks/useEventEmitter";
 
 const SearchBar = () => {
   const query = new URLSearchParams(useLocation().search);
   const searchParam = query.get("search");
+  const { emitEvent } = useEventEmitter();
   const [searchValue, setSearchValue] = useState<string>("");
   const navigate = useNavigate();
 
@@ -15,6 +17,7 @@ const SearchBar = () => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    emitEvent("EMIT_EVENT_LOADING", { loading: true });
     navigate(searchValue !== "" ? `/items?search=${searchValue}` : "/");
   };
 
