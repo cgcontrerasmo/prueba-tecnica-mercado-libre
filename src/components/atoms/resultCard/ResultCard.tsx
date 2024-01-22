@@ -1,9 +1,10 @@
-import { ResultCars } from "types/resultCard";
 import "./ResultCard.scss";
 import Icon from "../icon/Icon";
-import { useNavigate } from "react-router-dom";
-import { useEventEmitter } from "hooks/useEventEmitter";
 import { ACTIONS } from "context/EventContext";
+import { formatePrice } from "utilities/price";
+import { ResultCars } from "types/resultCard";
+import { useEventEmitter } from "hooks/useEventEmitter";
+import { useNavigate } from "react-router-dom";
 
 const ResultCard = ({ info }: ResultCars) => {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ const ResultCard = ({ info }: ResultCars) => {
               aria-label="Precio"
               onClick={handleGoDetail}
             >
-              {info.price}
+              {formatePrice(info.price)}
             </h2>
             <Icon name="Shipping" size={25} />
           </div>

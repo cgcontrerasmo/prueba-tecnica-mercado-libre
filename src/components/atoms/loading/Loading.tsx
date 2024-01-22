@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import "./Loading.scss";
+import { useEffect, useState } from "react";
 import { useEventEmitter } from "hooks/useEventEmitter";
 
 const Loading = () => {

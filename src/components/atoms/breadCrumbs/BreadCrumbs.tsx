@@ -1,19 +1,17 @@
-import BasicLayout from "components/templates/BasicLayout/BasicLayout";
 import "./BreadCrumbs.scss";
+import BasicLayout from "components/templates/BasicLayout/BasicLayout";
+import { PropsBreadCrumbs } from "types/breadCrumbs";
 
-const BreadCrumbs = () => {
+const BreadCrumbs = ({ filters }: PropsBreadCrumbs) => {
   return (
     <div className="bread-crumbs">
       <BasicLayout>
         <div className="bread-crumbs--internal">
           <div className="bread-crumbs--container-breads">
-            <span>
-              Electronica, audio y videoElectronica, audio y videoElectronica
-            </span>
-            <span>iPod</span>
-            <span>Reproductores</span>
-            <span>!Pod touch</span>
-            <span>32GB</span>
+            {filters &&
+              filters.map((filter, index) => {
+                return <span key={`filter-${index}`}>{filter.name}</span>;
+              })}
           </div>
         </div>
       </BasicLayout>

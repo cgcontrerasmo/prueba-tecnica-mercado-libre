@@ -18,7 +18,7 @@ const SearchBar = () => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    emitEvent(ACTIONS.LOADING_EVENT, true);
+    searchValue !== "" && emitEvent(ACTIONS.LOADING_EVENT, true);
     navigate(searchValue !== "" ? `/items?search=${searchValue}` : "/");
   };
 

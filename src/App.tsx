@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "../src/styles/main.scss";
-import Home from "pages/home/Home";
 import Detail from "pages/detail/Detail";
-import Navbar from "components/molecules/navbar/Navbar";
-import { EventProvider } from "context/EventContext";
+import Home from "pages/home/Home";
 import Loading from "components/atoms/loading/Loading";
+import Navbar from "components/molecules/navbar/Navbar";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { EventProvider } from "context/EventContext";
 
 function App() {
   return (

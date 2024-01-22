@@ -1,16 +1,16 @@
-import { ValuesAvailableFilters } from "types/utilities";
 import { getItems } from "./API";
+import { ValuesAvailableFilters } from "types/utilities";
 
 const getBestCategory = (
   values: ValuesAvailableFilters[] | undefined
-): ValuesAvailableFilters | undefined => {
+): ValuesAvailableFilters[] | undefined => {
   if (values) {
     const bestCategory = values.reduce((maxObject, currentObject) => {
       return currentObject.results > maxObject.results
         ? currentObject
         : maxObject;
     }, values[0]);
-    return bestCategory;
+    return [bestCategory];
   }
 };
 

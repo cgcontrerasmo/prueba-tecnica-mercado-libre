@@ -1,5 +1,6 @@
-import BasicLayout from "components/templates/BasicLayout/BasicLayout";
 import "./itemDetail.scss";
+import BasicLayout from "components/templates/BasicLayout/BasicLayout";
+import { formatePrice } from "utilities/price";
 import { ItemDetailProps } from "types/detail";
 
 const ResultDetail = ({ item }: ItemDetailProps) => {
@@ -16,7 +17,7 @@ const ResultDetail = ({ item }: ItemDetailProps) => {
               </span>
               <div>
                 <h1>{item?.title}</h1>
-                <h2>{item?.price.amount}</h2>
+                <h2>{formatePrice(item?.price.amount)}</h2>
                 <button>Comprar</button>
               </div>
             </div>

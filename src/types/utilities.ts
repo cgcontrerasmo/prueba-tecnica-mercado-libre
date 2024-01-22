@@ -1,7 +1,10 @@
 export type DataItems = {
-  filters: Filter[];
   available_filters: AvailableFilters[];
+  filters: Filter[];
   results: {
+    address: {
+      state_name: string;
+    };
     id: string;
     title: string;
     installments: {
@@ -12,9 +15,6 @@ export type DataItems = {
     condition: string;
     shipping: {
       free_shipping: boolean;
-    };
-    address: {
-      state_name: string;
     };
   }[];
 };
@@ -51,7 +51,7 @@ export type ItemsFormatted = {
     name: string;
     lastName: string;
   };
-  bestCategory: Filter["values"] | ValuesAvailableFilters;
+  bestCategory: Filter["values"] | ValuesAvailableFilters[];
   filters: Filter["values"];
   items: {
     id: string;
