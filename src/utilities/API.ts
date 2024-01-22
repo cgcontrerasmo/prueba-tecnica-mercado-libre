@@ -37,7 +37,7 @@ export const getItemDescription = async (
     );
     return data;
   } catch (error) {
-    console.error("Error al obtener datos del item:", error);
+    console.error("Error al obtener la descripción del item:", error);
     throw error;
   }
 };

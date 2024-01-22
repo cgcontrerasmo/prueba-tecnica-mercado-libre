@@ -29,7 +29,7 @@ export type Filter = {
     path_from_root: {
       id: string;
       name: string;
-    };
+    }[];
   }[];
 };
 
@@ -51,8 +51,9 @@ export type ItemsFormatted = {
     name: string;
     lastName: string;
   };
-  bestCategory: Filter["values"] | ValuesAvailableFilters[];
+  bestCategory: ValuesAvailableFilters[] | undefined;
   filters: Filter["values"];
+  availableFilters: ValuesAvailableFilters[] | undefined;
   items: {
     id: string;
     title: string;

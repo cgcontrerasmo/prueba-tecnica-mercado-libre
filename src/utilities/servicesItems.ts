@@ -1,7 +1,7 @@
 import { getItems } from "./API";
 import { ValuesAvailableFilters } from "types/utilities";
 
-const getBestCategory = (
+export const getBestCategory = (
   values: ValuesAvailableFilters[] | undefined
 ): ValuesAvailableFilters[] | undefined => {
   if (values) {
@@ -44,7 +44,7 @@ export const getItemsInFormat = async (searchValue: string) => {
     items,
     filters,
     availableFilters,
-    bestCategory: filters || getBestCategory(availableFilters),
+    bestCategory: getBestCategory(availableFilters),
   };
 
   return response;

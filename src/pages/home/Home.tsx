@@ -20,9 +20,9 @@ const Home = () => {
         setData(data);
         emitEvent(ACTIONS.LOADING_EVENT, false);
         emitEvent(ACTIONS.LOAD_INFO_BREADCRUMB, {
-          bestCategory: data.bestCategory,
           filters: data.filters,
           availableFilters: data.availableFilters,
+          bestCategory: data.bestCategory,
         });
       });
     }
@@ -32,7 +32,13 @@ const Home = () => {
     <div>
       {searchValue && (
         <>
-          <BreadCrumbs filters={data?.bestCategory} />
+          <BreadCrumbs
+            filters={
+              data?.filters
+                ? data?.filters[0].path_from_root
+                : data?.bestCategory
+            }
+          />
           <ListResultCard items={data?.items} />
         </>
       )}

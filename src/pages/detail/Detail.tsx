@@ -15,8 +15,10 @@ const Detail = () => {
   const [categories, setCategories] = useState<CategoriesFormatted[]>();
 
   const handleSelectFilters = (categoryId: string) => {
-    if (
-      events.bestCategory.length > 0 &&
+    if (events.filters) {
+      setCategories(events.filters[0].path_from_root);
+    } else if (
+      events?.bestCategory?.length > 0 &&
       !events.bestCategory.some(
         (category: CategoriesFormatted) => category.id === categoryId
       )
