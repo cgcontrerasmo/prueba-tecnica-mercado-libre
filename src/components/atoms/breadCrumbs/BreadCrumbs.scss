@@ -8,6 +8,10 @@
     padding: $littlePadding 0;
     display: grid;
     grid-column: 2 / span 10;
+    @media only screen and (max-width: $sm) {
+      margin: 0 $responsivePadding;
+      grid-column: span 12;
+    }
   }
   &--container-breads {
     display: flex;

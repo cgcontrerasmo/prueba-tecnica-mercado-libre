@@ -1,3 +1,5 @@
+@import "styles/variables";
+
 .navbar {
   align-items: center;
   background-color: #ffe600;
@@ -15,6 +17,11 @@
       height: 40px;
       width: 60px;
       grid-column: span 1;
+    }
+    @media only screen and (max-width: $sm) {
+      grid-column: 1 / span 12;
+      padding: 0 $responsivePadding;
+      width: calc(100% - 16px);
     }
   }
 }

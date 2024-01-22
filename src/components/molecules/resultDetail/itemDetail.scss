@@ -3,7 +3,10 @@
 .result-detail {
   display: flex;
   justify-content: center;
-  padding: $littlePadding;
+  padding: 0 $littlePadding $largePadding;
+  @media only screen and (max-width: $sm) {
+    padding: 0 0 $responsivePadding;
+  }
   &--internal {
     display: grid;
     grid-column: 2 / span 10;
@@ -11,6 +14,10 @@
     padding: $largePadding;
     border-radius: $borderRadius;
     background: #ffffff;
+    @media only screen and (max-width: $sm) {
+      padding: $responsivePadding;
+      grid-column: 1 / span 12;
+    }
     & > div:first-child {
       display: grid;
       grid-column: span 10;
@@ -21,6 +28,10 @@
         margin: -$largePadding 0px -$largePadding 0px;
         border-radius: $borderRadius;
         grid-column: span 7;
+        @media only screen and (max-width: $sm) {
+          margin: 0px;
+          grid-column: span 10;
+        }
       }
       & > div:last-child {
         grid-column: span 3;
@@ -49,11 +60,17 @@
             background: red;
           }
         }
+        @media only screen and (max-width: $sm) {
+          grid-column: span 10;
+        }
       }
     }
     & > div:last-child {
       display: grid;
       grid-column: span 7;
+      @media only screen and (max-width: $sm) {
+        grid-column: span 10;
+      }
       h2 {
         margin: $largePadding 0px;
         font-size: 1.556rem;

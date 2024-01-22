@@ -4,6 +4,7 @@ $borderRadius: 4px;
 //Paddings
 $littlePadding: 16px;
 $largePadding: 32px;
+$responsivePadding: 8px;
 
 //Colors
 $principalYellow: #ffe600;
@@ -12,3 +13,10 @@ $lessDarkerGray: #666666;
 $lessLighterGray: #999999;
 $lighterGray: #eeeeee;
 $principalBlue: #3483fa;
+
+//BreakPoints
+$xxs: 375px;
+$xs: 576px;
+$sm: 768px;
+$md: 992px;
+$xl: 1200px;

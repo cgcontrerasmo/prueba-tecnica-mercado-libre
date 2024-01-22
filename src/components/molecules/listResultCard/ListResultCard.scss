@@ -15,5 +15,9 @@
     & > :not(:last-child) {
       border-bottom: 2px solid $lighterGray;
     }
+    @media only screen and (max-width: $sm) {
+      padding: 0;
+      grid-column: 1 / span 12;
+    }
   }
 }
