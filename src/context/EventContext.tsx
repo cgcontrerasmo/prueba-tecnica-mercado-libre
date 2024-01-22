@@ -12,7 +12,6 @@ export const ACTIONS = {
 
 const initialState = {
   loading: false,
-  ruta: "",
 };
 
 type InitialStateType = typeof initialState;

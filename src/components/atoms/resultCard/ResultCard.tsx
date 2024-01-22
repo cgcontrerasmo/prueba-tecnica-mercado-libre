@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const ResultCard = ({ info }: ResultCars) => {
   const navigate = useNavigate();
+
   const { emitEvent } = useEventEmitter();
 
   const handleGoDetail = () => {

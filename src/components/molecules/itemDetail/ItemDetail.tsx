@@ -1,9 +1,9 @@
-import "./itemDetail.scss";
+import "./ItemDetail.scss";
 import BasicLayout from "components/templates/BasicLayout/BasicLayout";
 import { formatePrice } from "utilities/price";
 import { ItemDetailProps } from "types/detail";
 
-const ResultDetail = ({ item }: ItemDetailProps) => {
+const ItemDetail = ({ item }: ItemDetailProps) => {
   return (
     <div className="result-detail">
       <BasicLayout>
@@ -32,4 +32,4 @@ const ResultDetail = ({ item }: ItemDetailProps) => {
   );
 };
 
-export default ResultDetail;
+export default ItemDetail;

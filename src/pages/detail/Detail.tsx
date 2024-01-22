@@ -1,12 +1,12 @@
 import "./Detail.scss";
 import BreadCrumbs from "components/atoms/breadCrumbs/BreadCrumbs";
-import ResultDetail from "components/molecules/resultDetail/itemDetail";
 import { CategoriesFormatted } from "types/detail";
 import { getInfoItemInFormat } from "utilities/servicesItem";
 import { ItemInfoFormatted } from "types/utilities";
 import { useEffect, useState } from "react";
 import { useEventEmitter } from "hooks/useEventEmitter";
 import { useParams } from "react-router-dom";
+import ItemDetail from "components/molecules/itemDetail/ItemDetail";
 
 const Detail = () => {
   const { id } = useParams();
@@ -44,9 +44,9 @@ const Detail = () => {
   }, [id]);
 
   return (
-    <div>
+    <div data-testid="container-details">
       <BreadCrumbs filters={categories} />
-      <ResultDetail item={data?.item} />
+      <ItemDetail item={data?.item} />
     </div>
   );
 };

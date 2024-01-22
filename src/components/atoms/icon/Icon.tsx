@@ -10,7 +10,13 @@ const Icon = ({ name, size = 16, ...rest }: iconProps) => {
 
   return (
     <div className="icon">
-      <img src={MyIcon} alt={`Icono-${name}`} {...rest} style={styles} />
+      <img
+        src={MyIcon}
+        alt={`Icono-${name}`}
+        {...rest}
+        style={styles}
+        data-testid="icon"
+      />
     </div>
   );
 };

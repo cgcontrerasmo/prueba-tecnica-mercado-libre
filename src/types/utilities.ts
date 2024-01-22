@@ -102,7 +102,7 @@ export type ItemInfoFormatted = {
     picture: string;
     condition: string;
     free_shipping: string;
-    sold_quantity: string;
+    sold_quantity: string | undefined;
     description: string;
     category_id: string;
   };
