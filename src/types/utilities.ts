@@ -46,7 +46,7 @@ export type ValuesAvailableFilters = {
   results: number;
 };
 
-export type itemsFormatted = {
+export type ItemsFormatted = {
   author: {
     name: string;
     lastName: string;
@@ -65,4 +65,44 @@ export type itemsFormatted = {
     condition: string;
     free_shipping: boolean;
   }[];
+};
+
+export type ItemInfo = {
+  id: string;
+  title: string;
+  currency_id: string;
+  price: number;
+  thumbnail: string;
+  condition: string;
+  shipping: {
+    free_shipping: string;
+  };
+  sold_quantity: string;
+  category_id: string;
+};
+
+export type ItemDescription = {
+  plain_text: string;
+};
+
+export type ItemInfoFormatted = {
+  author: {
+    name: string;
+    lastName: string;
+  };
+  item: {
+    id: string;
+    title: string;
+    price: {
+      currency: string;
+      amount: number;
+      decimals: number;
+    };
+    picture: string;
+    condition: string;
+    free_shipping: string;
+    sold_quantity: string;
+    description: string;
+    category_id: string;
+  };
 };

@@ -1,5 +1,5 @@
-import { itemsFormatted } from "./utilities";
+import { ItemsFormatted } from "./utilities";
 
 export type listResultCardProps = {
-  items?: itemsFormatted["items"];
+  items?: ItemsFormatted["items"];
 };

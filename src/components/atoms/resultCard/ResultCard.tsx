@@ -2,12 +2,16 @@ import { ResultCars } from "types/resultCard";
 import "./ResultCard.scss";
 import Icon from "../icon/Icon";
 import { useNavigate } from "react-router-dom";
+import { useEventEmitter } from "hooks/useEventEmitter";
+import { ACTIONS } from "context/EventContext";
 
 const ResultCard = ({ info }: ResultCars) => {
   const navigate = useNavigate();
+  const { emitEvent } = useEventEmitter();
 
   const handleGoDetail = () => {
     navigate(`/items/${info.id}`);
+    emitEvent(ACTIONS.LOADING_EVENT, true);
   };
 
   return (
