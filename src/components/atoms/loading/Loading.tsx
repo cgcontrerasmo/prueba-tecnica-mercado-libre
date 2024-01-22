@@ -4,18 +4,11 @@ import { useEventEmitter } from "hooks/useEventEmitter";
 
 const Loading = () => {
   const [loading, setLoading] = useState(false);
-  const { subscribe } = useEventEmitter();
-
-  const unsubscribe = subscribe("EMIT_EVENT_LOADING", (payload) => {
-    console.log("Evento recibido en ComponentB:", payload);
-    setLoading(payload.loading);
-  });
+  const { events } = useEventEmitter();
 
   useEffect(() => {
-    return () => {
-      unsubscribe();
-    };
-  }, [unsubscribe]);
+    setLoading(events.loading);
+  }, [events.loading]);
 
   return loading ? (
     <div className="loading">

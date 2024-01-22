@@ -17,7 +17,7 @@ const Home = () => {
     if (searchValue) {
       getItemsInFormat(searchValue).then((data) => {
         setData(data);
-        emitEvent("EMIT_EVENT_LOADING", { loading: false });
+        emitEvent("LOADING_EVENT", false);
       });
     }
   }, [searchValue]);

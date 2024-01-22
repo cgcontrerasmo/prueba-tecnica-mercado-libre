@@ -4,8 +4,6 @@ import BasicLayout from "components/templates/BasicLayout/BasicLayout";
 import { listResultCardProps } from "types/listResultCard";
 
 const ListResultCard = ({ items }: listResultCardProps) => {
-  console.log("items", items);
-
   return (
     <>
       {items && (

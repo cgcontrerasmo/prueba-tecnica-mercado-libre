@@ -1,34 +1,53 @@
-import { createContext, ReactNode } from "react";
+import { createContext, ReactNode, useReducer } from "react";
 import { EventContextType } from "types/eventEmitter";
 
 export const EventContext = createContext<EventContextType | undefined>(
   undefined
 );
 
+export const ACTIONS = {
+  LOADING_EVENT: "LOADING_EVENT",
+};
+
+const initialState = {
+  loading: false,
+  ruta: "",
+};
+
+type InitialStateType = typeof initialState;
+
+const eventReducer = (
+  state = initialState,
+  action: { type: string; payload: any }
+) => {
+  switch (action.type) {
+    case ACTIONS.LOADING_EVENT:
+      return {
+        ...state,
+        loading: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
 type Props = {
   children: ReactNode;
 };
 
 export const EventProvider = ({ children }: Props) => {
-  const subscribers: Record<string, ((payload?: any) => void)[]> = {};
+  const [state, dispatch] = useReducer(eventReducer, initialState);
 
-  const emitEvent = (eventType: string, payload?: any) => {
-    const callbacks = subscribers[eventType] || [];
-    callbacks.forEach((callback) => callback(payload));
-  };
-
-  const subscribe = (eventType: string, callback: (payload?: any) => void) => {
-    subscribers[eventType] = [...(subscribers[eventType] || []), callback];
-
-    return () => {
-      subscribers[eventType] =
-        subscribers[eventType]?.filter((cb) => cb !== callback) || [];
-    };
+  const emitEvent = (eventType: string, payload: InitialStateType) => {
+    dispatch({
+      type: eventType,
+      payload,
+    });
   };
 
   const contextValue: EventContextType = {
+    events: state,
     emitEvent,
-    subscribe,
   };
 
   return (
