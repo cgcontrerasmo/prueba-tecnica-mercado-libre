@@ -1,26 +1,36 @@
 import ResultCard from "components/atoms/resultCard/ResultCard";
 import "./ListResultCard.scss";
 import BasicLayout from "components/templates/BasicLayout/BasicLayout";
+import { listResultCardProps } from "types/listResultCard";
+import Loading from "components/atoms/loading/Loading";
 
-const ListResultCard = () => {
+const ListResultCard = ({ items }: listResultCardProps) => {
+  console.log("items", items);
   return (
-    <div className="list-result-card">
-      <BasicLayout>
-        <div className="list-result-card--internal">
-          {[...Array(6)].map((el, index) => (
-            <ResultCard
-              key={`result-card${index}`}
-              info={{
-                description: "kjsdfhsadf",
-                image: "sjkfdhkjas",
-                place: "Mendoza",
-                price: "1980",
-              }}
-            />
-          ))}
+    <>
+      {items ? (
+        <div className="list-result-card">
+          <BasicLayout>
+            <div className="list-result-card--internal">
+              {items.map((item, index) => (
+                <ResultCard
+                  key={`result-card${index}`}
+                  info={{
+                    id: item.id,
+                    description: item.title,
+                    image: item.picture,
+                    place: "Mendoza",
+                    price: item.prince.amount,
+                  }}
+                />
+              ))}
+            </div>
+          </BasicLayout>
         </div>
-      </BasicLayout>
-    </div>
+      ) : (
+        <Loading />
+      )}
+    </>
   );
 };
 

@@ -1,9 +1,13 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import "./SearchBar.scss";
 import Icon from "../icon/Icon";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
+  const query = new URLSearchParams(useLocation().search);
+  const searchParam = query.get("search");
   const [searchValue, setSearchValue] = useState<string>("");
+  const navigate = useNavigate();
 
   const handleChangeSearchValue = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -11,8 +15,14 @@ const SearchBar = () => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("Submit", searchValue);
+    navigate(searchValue !== "" ? `/items?search=${searchValue}` : "/");
   };
+
+  useEffect(() => {
+    if (searchParam) {
+      setSearchValue(searchParam);
+    }
+  }, [searchParam]);
 
   return (
     <form className="search-bar" onSubmit={handleSubmit}>

@@ -10,7 +10,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" Component={Home} />
-        <Route path="/detalle" Component={Detail} />
+        <Route path="/items" Component={Home} />
+        <Route path="/items/:id" Component={Detail} />
       </Routes>
     </Router>
   );

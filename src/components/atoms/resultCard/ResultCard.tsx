@@ -1,6 +1,5 @@
-import { ResultCars } from "types/resultCard/resultCard";
+import { ResultCars } from "types/resultCard";
 import "./ResultCard.scss";
-import logo from "assets/Logo_ML.png";
 import Icon from "../icon/Icon";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +7,7 @@ const ResultCard = ({ info }: ResultCars) => {
   const navigate = useNavigate();
 
   const handleGoDetail = () => {
-    navigate("/Detalle");
+    navigate(`/items/${info.id}`);
   };
 
   return (
@@ -16,7 +15,7 @@ const ResultCard = ({ info }: ResultCars) => {
       <img
         alt={`${info.description}`}
         role="link"
-        src={logo}
+        src={info.image}
         className="result-card__image"
         onClick={handleGoDetail}
       />
@@ -29,13 +28,13 @@ const ResultCard = ({ info }: ResultCars) => {
               aria-label="Precio"
               onClick={handleGoDetail}
             >
-              $ 1.980
+              {info.price}
             </h2>
             <Icon name="Shipping" size={25} />
           </div>
           <span aria-label="Ubicación">Capital Fedaral</span>
         </div>
-        <p>Apple Ipod Touch 5g 16gb Negro Igual A Nuevo Completo Unico!</p>
+        <p>{info.description}</p>
       </div>
     </div>
   );

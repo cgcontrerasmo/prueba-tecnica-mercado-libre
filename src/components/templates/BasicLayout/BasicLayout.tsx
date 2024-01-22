@@ -1,4 +1,4 @@
-import { BasicLayoutProps } from "types/basicLayout/basicLayout";
+import { BasicLayoutProps } from "types/basicLayout";
 import "./BasicLayout.scss";
 
 const BasicLayout = ({ children }: BasicLayoutProps) => {
