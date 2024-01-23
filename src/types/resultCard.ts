@@ -5,5 +5,6 @@ export type ResultCars = {
     price: number;
     description: string;
     place: string;
+    free_shipping: boolean;
   };
 };

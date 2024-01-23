@@ -2,9 +2,6 @@ export type DataItems = {
   available_filters: AvailableFilters[];
   filters: Filter[];
   results: {
-    address: {
-      state_name: string;
-    };
     id: string;
     title: string;
     installments: {

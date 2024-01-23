@@ -17,6 +17,7 @@ const ListResultCard = ({ items }: listResultCardProps) => {
             image: item.picture,
             place: "Mendoza",
             price: item.prince.amount,
+            free_shipping: item.free_shipping,
           }}
         />
       )),

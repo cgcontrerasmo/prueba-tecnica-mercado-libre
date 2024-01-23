@@ -4,4 +4,5 @@ export const mocksResultCard = {
   image: "http://http2.mlstatic.com/D_973345-MLA47781591382_102021-I.jpg",
   place: "Mendoza",
   price: 1102000,
+  free_shipping: true,
 };

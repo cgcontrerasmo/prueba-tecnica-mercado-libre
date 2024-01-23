@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import ResultCard from "components/atoms/resultCard/ResultCard";
 import { ResultCars } from "types/resultCard";
 import { mocksResultCard } from "./mocksResultCard";
