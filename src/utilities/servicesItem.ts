@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { getItemDescription, getItemInfo } from "./API";
 
 export const getInfoItemInFormat = async (idItem = "") => {

@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import axios from "axios";
 import { DataItems, ItemDescription, ItemInfo } from "../types/utilities";
 

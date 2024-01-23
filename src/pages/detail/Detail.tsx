@@ -38,13 +38,13 @@ const Detail = () => {
   useEffect(() => {
     getInfoItemInFormat(id).then((data) => {
       setData(data);
-      handleSelectFilters(data.item.category_id);
+      handleSelectFilters(data.item?.category_id);
       emitEvent("LOADING_EVENT", false);
     });
   }, [id]);
 
   return (
-    <div data-testid="container-details">
+    <div data-testid="container-detail">
       <BreadCrumbs filters={categories} />
       <ItemDetail item={data?.item} />
     </div>

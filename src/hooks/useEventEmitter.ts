@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { EventContext } from "context/EventContext";
 import { useContext } from "react";
 

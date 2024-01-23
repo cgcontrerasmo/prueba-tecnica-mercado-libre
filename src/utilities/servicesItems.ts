@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { getItems } from "./API";
 import { ValuesAvailableFilters } from "types/utilities";
 

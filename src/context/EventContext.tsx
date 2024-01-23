@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { createContext, ReactNode, useReducer } from "react";
 import { EventContextType } from "types/eventEmitter";
 

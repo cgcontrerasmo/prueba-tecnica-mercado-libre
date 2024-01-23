@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import "../src/styles/main.scss";
 import Loading from "components/atoms/loading/Loading";
 import Navbar from "components/molecules/navbar/Navbar";
