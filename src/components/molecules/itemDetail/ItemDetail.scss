@@ -56,8 +56,9 @@
           height: 40px;
           border-radius: $borderRadius;
           cursor: pointer;
+          transition: background-color 0.2s ease-in;
           &:hover {
-            background: red;
+            background: $hoverBlue;
           }
         }
         @media only screen and (max-width: $sm) {
