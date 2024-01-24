@@ -36,7 +36,7 @@ const ResultCard = ({ info }: ResultCars) => {
             >
               {formatePrice(info.price)}
             </h2>
-            {info.free_shipping && <Icon name="Shipping" size={25} />}
+            {info.free_shipping && <Icon name="Shipping" size={20} />}
           </div>
           <span aria-label="Ubicación">{info.place}</span>
         </div>
