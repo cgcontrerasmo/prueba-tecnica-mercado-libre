@@ -1,0 +1,27 @@
+@import "styles/variables";
+
+.navbar {
+  align-items: center;
+  background-color: #ffe600;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  &__image-search-bar {
+    display: grid;
+    grid-column: 2 / span 10;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 18px;
+    width: 100%;
+    cursor: pointer;
+    img {
+      height: 40px;
+      width: 60px;
+      grid-column: span 1;
+    }
+    @media only screen and (max-width: $sm) {
+      grid-column: 1 / span 12;
+      padding: 0 $responsivePadding;
+      width: calc(100% - 16px);
+    }
+  }
+}

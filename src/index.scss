@@ -1,0 +1,17 @@
+@import "styles/variables";
+
+body {
+  margin: 0;
+  font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $lighterGray;
+}
+
+code {
+  font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+}
+
+html {
+  font-size: 18px;
+}
