@@ -20,6 +20,7 @@
     }
     & > :not(:last-child)::after {
       content: " > ";
+      padding-right: 2px;
     }
     span {
       font-size: 0.778rem;
